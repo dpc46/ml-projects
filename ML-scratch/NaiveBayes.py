@@ -13,6 +13,7 @@ class NaiveBayes:
         self._priors = np.zeros(n_classes, dtype=np.float64)
 
         for c in self._classes:
+            # we have a gaussian dist. for each class
             X_c = X[c==y]
             self._mean[c,:] = X_c.mean(axis=0)
             self._var[c,:] = X_c.var(axis=0)
